@@ -1,0 +1,733 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+/*header*/
+header {
+	width: 100%;
+	height: 70px;
+	background-color: #EC715F;
+}
+
+/*hanba-ga-*/
+#nav-drawer {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  display: none;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #fff;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+/*hanba-ga-*/
+
+
+.head-line {
+	height: 70px;
+}
+/*nav*/
+h2{
+	text-align: center;
+	font-size: 32px;
+	color: #000000;
+	padding-top: 90px;
+}
+
+
+
+nav{
+	width: 1024px;
+	margin: 0 auto;
+	height: 70px;
+}
+
+
+.nav-list {
+	width: 512px;
+	float: right;
+
+}
+.nav-list-item {
+	list-style: none;
+	color: #FAFAFA;
+	padding: 25px 30px;
+	font-size: 16px;
+	float: right;
+}
+
+/*main-visual*/
+.main-visual {
+	width: 100%;
+	height: 650px;
+	background-image: url(1-10img/mv.png);
+	background-position: center;
+	background-size: cover;
+}
+.main-visual-content {
+	width: 100%;
+	height: 650px;
+	text-align: center;
+	padding-top: 200px;
+}
+.main-visual-name {
+	font-size: 64px;
+	color: #fAFAFA;
+	padding-bottom: 10px;
+}
+.main-visual-text {
+	font-size: 20px;
+	color: #fAFAFA;
+}
+.main {
+	width: 100%;
+	height: 1400px;
+	background-color: #ECEFF1;
+}
+/*portfolio*/
+.portfolio-1 {
+	width: 100%;
+	background-color: #eceff1;
+}
+.portfolio {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #ECeFf1;
+}
+.portfolio-headline {
+	font-size: 32px;
+	color: #000000;
+	margin: 0 auto;
+	padding-top: 90px;
+	padding-bottom: 8px;
+	/*border-bottom: 3px solid ;*/
+	/*width: 70px;*/
+
+}
+
+.portfolio-headline::after{
+	content: "";
+	display: block;
+	background-color: #ec715f;
+	width: 70px;
+	height: 3px;
+	margin: 8px auto 0 auto;
+}
+
+.portfolio-text {
+	font-size: 16px;
+	color: #000000;
+	padding: 30px 30px;
+}
+
+.portfolio-group{
+	width: 920px;
+	margin: 0 auto;
+}
+
+.portfolio-box {
+	float:left;
+	width: 300px;
+	height: 250px;
+	padding-bottom: 90px;
+	background-size: cover;
+	background-position: center;
+}
+.portfolio-box:nth-child(even) {
+	/*margin: 0 10px 10px 0;*/
+}
+.portfolio-box:nth-child(1) {
+	background-image: url(1-10img/sketch.jpg);
+	margin: 0 10px 10px 0;
+}
+.portfolio-box:nth-child(2) {
+	background-image: url(1-10img/websuku.png);
+    margin: 0 10px 10px 0;
+}
+.portfolio-box:nth-child(3) {
+	background-image: url(1-10img/write.jpg);
+	margin:0 0 10px 0;
+}
+.portfolio-box:nth-child(4) {
+	background-image: url(1-10img/webcamp.png);
+	margin: 0 10px 90px 0;
+}
+.portfolio-box:nth-child(5) {
+	background-image: url(1-10img/talk.jpg);
+    margin-bottom: 90px;
+}
+.portfolio-box:nth-child(6) {
+	background-image: url(1-10img/webcamp-mother.png);
+	margin: 0 0 90px 10px;
+}
+
+/*feature*/
+.feature {
+	width: 980px;
+	margin: 0 auto;
+}
+.feature-headline::after{
+	content: "";
+	display: block;
+	background-color: #ec715f;
+	width: 70px;
+	height: 3px;
+	margin: 8px auto 0 auto;
+}
+.feature-text {
+	margin: 30px;
+	font-size: 16px;
+	color: #000000;
+	text-align: center;
+}
+
+.strength1 {
+	width: 320px;
+	float: left;
+	text-align: center;
+}
+
+.icon {
+	text-align: center;
+}
+.icon i{
+	display: inline-block;
+	margin: 0 auto;
+}
+.icon-title {
+	font-size: 20px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+.icon-text {
+	font-size: 16px;
+	color: #000000;
+	padding-bottom: 90px;
+	text-align: left;
+}
+
+.fa-code {
+	font-size: 60px;
+}
+.strength2 {
+	width: 320px;
+    float: left;
+    margin: 0 10px;
+}
+.fa-desktop {
+	font-size: 60px;
+}
+.strength3 {
+	width: 320px;
+    float: left;
+}
+.fa-cogs {
+	font-size: 60px;
+
+}
+
+/*profile*/
+.profile {
+	width: 100%;
+	background-color: #eceff1;
+}
+.profile1 {
+	width: 1024px;
+	background-color: #eceff1;
+	margin: 0 auto;
+}
+.profile-headline::after{
+	content: "";
+	display: block;
+	background-color: #ec715f;
+	width: 70px;
+	height: 3px;
+	margin: 8px auto 0 auto;
+}
+.profile-text {
+	font-size: 16px;
+	color: #000000;
+	text-align: center;
+	padding-bottom: 30px;
+}
+.profile-left {
+	width: 512px;
+	text-align: center;
+	float: left;
+	padding-bottom: 90px;
+}
+.profile-pic {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+}
+.profile-right {
+	float: left;
+	padding-bottom: 90px;
+}
+.profile-category {
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+.category-text {
+	font-size: 16px;
+	color: #000000;
+	padding-bottom: 8px;
+}
+/*contect*/
+.contact {
+	width: 800px;
+	margin: 0 auto;
+}
+.contact-headline::after{
+	content: "";
+	display: block;
+	background-color: #ec715f;
+	width: 70px;
+	height: 3px;
+	margin: 8px auto 0 auto;
+}
+.contact-text {
+	font-size: 16px;
+	color: #000000;
+	text-align: center;
+	margin: 30px;
+}
+
+/*contact-left*/
+.contact-left {
+	width: 400px;
+	float: left;
+	padding-bottom: 90px;
+}
+.contact-box {
+	margin: 0 auto;
+	width: 124px;
+}
+.tools {
+	font-size: 20px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.tool-text {
+	text-decoration: underline;
+	padding-bottom: 20px;
+}
+
+/*contact-right*/
+.contact-right {
+	width: 400px;
+	float: left;
+	padding-bottom: 90px;
+}
+.social-box {
+	width: 169px;
+	margin: 0 auto;
+}
+.sns {
+	font-size: 20px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.social {
+	text-align: center;
+}
+.social i{
+	display: inline-block;
+}
+.fa-facebook-f {
+	font-size: 50px;
+}
+.fa-twitter {
+	font-size: 50px;
+	margin: 0 20px;
+}
+.fa-instagram {
+	font-size: 50px;
+}
+footer {
+	width: 100%;
+	height: 60px;
+	background-color: #ec715f;
+}
+.footer {
+	font-size: 16px;
+	color: #fafafa;
+	text-align: center;
+	padding: 22px 0;
+}
+/*レスポンシブ対応*/
+@media screen and (max-width: 768px) {
+	body {
+		width: 100%;
+		margin: 0 auto;
+	}
+	header {
+		height: 50px;
+		position: relative;
+	}
+    p br {display: none}
+
+
+/*ha*/
+
+#nav-drawer {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  display: block;
+/*waku*/
+  padding: 0.5em 0.5em;
+  border: solid 1px #fff;
+  margin: 0em 0px;
+  border-radius: 3px;
+/*waku*/
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 30px;/*長さ*/
+  border-radius: 3px;
+  background: #fff;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #fff;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+/*ha*/
+
+
+
+	.head-line{
+		height: 45px;
+	}
+	nav {
+		width: 90%;
+	}
+	.nav-list-item {
+		display: none;
+	}
+	.main-visual {
+	    background-image: url(1-10img/code.png);
+    }
+    .mainvisual-content{
+    }
+    .main-visual-name {
+    	font-size: 40px;
+    	width: 90%;
+    	margin: 0 auto;
+    }
+    .main-visual-text {
+    	font-size: 18px;
+    	width: 90%;
+    	margin: 0 auto;
+    }
+    .main {
+    }
+    .portfolio-1 {
+    }
+    .portfolio {
+    }
+    .portfolio-headline{
+    	width: 90%;
+    }
+    .portfolio-text {
+    	width: 90%;
+    	padding:30px 0 30px 0;
+    	margin: 0 auto;
+    }
+    .portfolio-group{
+    	padding-bottom: 90px;
+    	width: auto;
+    }
+    .portfolio-box {
+    	float: none;
+    	margin: 0 auto;
+    	width: auto;
+    }
+    .portfolio-box:nth-child(even) {
+    	margin: 0 auto;
+
+    }
+    .portfolio-box:nth-child(1) {
+    	display: none;
+	}
+	.portfolio-box:nth-child(2) {
+		width: 300px;
+		height: 250px;
+	}
+	.portfolio-box:nth-child(3) {
+	 	display: none;
+	}
+	.portfolio-box:nth-child(4) {
+		width: 300px;
+		height: 250px;
+		margin: 10px auto;
+	}
+	.portfolio-box:nth-child(5) {
+		display: none;
+	}
+	 .portfolio-box:nth-child(6) {
+	 	width: 300px;
+	 	height: 250px;
+	}
+	.feature {
+		width: 90%;
+		margin: none none;
+	}
+	.feature-headline {
+		margin: 0 auto;
+	}
+	.feature-text {
+		margin: 0 auto;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.icon-text {
+		padding-bottom: 10px;
+		margin: 0 auto;
+		text-align: center;
+	}
+    .strength1 {
+    	float: none;
+    	margin: 0 auto;
+    	padding-bottom: 10px;
+    	width: 100%;
+    }
+    .strength2 {
+    	float: none;
+    	margin: 0 auto;
+    	padding-bottom: 10px;
+        width: 100%;
+    }
+    .strength3 {
+    	float: none;
+    	margin: 0 auto;
+        padding-bottom: 90px;
+        width: 100%;
+    }
+    .profile1 {
+    	width: 90%;
+    	margin: 0 auto;
+    }
+    .profile-text {
+    	margin: 30px 0 0 0;
+    }
+    .profile-left {
+    	float: none;
+    	width: 250px;
+    	height: 250px;
+    	background-image: url(1-10img/my-icon.jpg);
+        margin: 0 auto;
+        border-radius: 50%;
+        margin-bottom: 20px;
+
+    	}
+    .profile-pic {
+    	display: none;
+    	}
+    .profile-right {
+    	float: none;
+    	width: auto;
+    	padding-bottom: 70px;
+    }
+    .profile-category {
+    	text-align: center;
+   	}
+   	.category-text {
+   		text-align: center;
+   		padding-bottom: 20px;
+   		}
+    .contact {
+   			width: auto;
+   	}
+   	.contact-block {
+   		width: 90%;
+   		margin: 0 auto;
+   	}
+   	.contact-headline::after{
+   	}
+   	.contact-left {
+   		float: none;
+   		width: auto;
+   		padding-bottom: 0px;
+   	}
+   	.contact-right {
+   		float: none;
+   		width: auto;
+   	}
+   	.contact-text{
+   		width: auto;
+   		margin:0 0 30px 0;
+   	}
+   	.contact-box {
+   		width: auto;
+   		text-align: center;
+  	}
+  	.sns {
+  		text-align: center;
+  	}
+  	.fa-twitter {
+  		margin: 0 8px;
+  	}}
+
+
+  	@media screen and (max-width: 320px) {
+	body {
+		width: 100%;
+		margin: 0 auto;
+	}
+	header {
+		height: 50px;
+		position: relative;
+	}
+    p br {display: none}
+    
+    .main-visual-text {
+    	font-size: 17px;
+    }
+    .category-text {
+    	font-size: 13px;
+    }
