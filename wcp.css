@@ -16,7 +16,6 @@ header {
 	background-color: #EC715F;
 }
 
-/*hanba-ga-*/
 #nav-drawer {
   position: absolute;
   top: 3px;
@@ -97,9 +96,6 @@ header {
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
-/*hanba-ga-*/
-
-
 .head-line {
 	height: 70px;
 }
@@ -133,6 +129,12 @@ nav{
 	float: right;
 }
 
+.line {
+	background-color: #ec715f;
+	width: 70px;
+	height: 3px;
+	margin: 8px auto 0 auto;
+}
 /*main-visual*/
 .main-visual {
 	width: 100%;
@@ -177,19 +179,6 @@ nav{
 	color: #000000;
 	margin: 0 auto;
 	padding-top: 90px;
-	padding-bottom: 8px;
-	/*border-bottom: 3px solid ;*/
-	/*width: 70px;*/
-
-}
-
-.portfolio-headline::after{
-	content: "";
-	display: block;
-	background-color: #ec715f;
-	width: 70px;
-	height: 3px;
-	margin: 8px auto 0 auto;
 }
 
 .portfolio-text {
@@ -201,13 +190,13 @@ nav{
 .portfolio-group{
 	width: 920px;
 	margin: 0 auto;
+	padding-bottom: 90px;
 }
 
 .portfolio-box {
 	float:left;
 	width: 300px;
 	height: 250px;
-	padding-bottom: 90px;
 	background-size: cover;
 	background-position: center;
 }
@@ -228,15 +217,14 @@ nav{
 }
 .portfolio-box:nth-child(4) {
 	background-image: url(1-10img/webcamp.png);
-	margin: 0 10px 90px 0;
+	margin: 0 10px 0 0;
 }
 .portfolio-box:nth-child(5) {
 	background-image: url(1-10img/talk.jpg);
-    margin-bottom: 90px;
 }
 .portfolio-box:nth-child(6) {
 	background-image: url(1-10img/webcamp-mother.png);
-	margin: 0 0 90px 10px;
+	margin: 0 0 0 10px;
 }
 
 /*feature*/
@@ -247,10 +235,6 @@ nav{
 .feature-headline::after{
 	content: "";
 	display: block;
-	background-color: #ec715f;
-	width: 70px;
-	height: 3px;
-	margin: 8px auto 0 auto;
 }
 .feature-text {
 	margin: 30px;
@@ -319,16 +303,13 @@ nav{
 .profile-headline::after{
 	content: "";
 	display: block;
-	background-color: #ec715f;
-	width: 70px;
-	height: 3px;
-	margin: 8px auto 0 auto;
 }
 .profile-text {
 	font-size: 16px;
 	color: #000000;
 	text-align: center;
 	padding-bottom: 30px;
+	padding-top: 30px;
 }
 .profile-left {
 	width: 512px;
@@ -362,10 +343,6 @@ nav{
 .contact-headline::after{
 	content: "";
 	display: block;
-	background-color: #ec715f;
-	width: 70px;
-	height: 3px;
-	margin: 8px auto 0 auto;
 }
 .contact-text {
 	font-size: 16px;
@@ -434,7 +411,7 @@ footer {
 	font-size: 16px;
 	color: #fafafa;
 	text-align: center;
-	padding: 22px 0;
+	padding-top: 20px;
 }
 /*レスポンシブ対応*/
 @media screen and (max-width: 768px) {
@@ -653,7 +630,6 @@ footer {
     	margin: 0 auto;
     }
     .profile-text {
-    	margin: 30px 0 0 0;
     }
     .profile-left {
     	float: none;
@@ -700,11 +676,14 @@ footer {
    	}
    	.contact-text{
    		width: auto;
-   		margin:0 0 30px 0;
+   		margin:30px 0;
    	}
    	.contact-box {
    		width: auto;
    		text-align: center;
+  	}
+  	.social-box {
+  		text-align: center;
   	}
   	.sns {
   		text-align: center;
